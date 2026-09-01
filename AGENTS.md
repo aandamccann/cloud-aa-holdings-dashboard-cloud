@@ -1,0 +1,45 @@
+# A&A Holdings dashboard design standard
+
+Apply these rules automatically to every new page, form, checklist, panel, and widget in this project. The user must not need to request them again.
+
+- Reuse `src/designSystem.css`; do not create a competing visual theme.
+- Give every widget and major section a clear, strong border and enough spacing to distinguish it from adjacent content.
+- Keep every movable widget's numbered control label consistent: bold white `SECTION` plus its number in the existing navy control bar, with identical `Drag to move` helper lettering on every section.
+- Keep every movable widget control header compact and consistent with the Japan Stock & Capital standard: 32px high on desktop and 30px on mobile, with proportionally compact title, helper, business label, and control buttons. Apply this through the shared design system rather than one-off page rules.
+- Mark every field that must be completed with a visible red asterisk beside its label.
+- Add the native `required` attribute wherever a field is mandatory so the shared design system applies automatically.
+- Keep optional fields unmarked.
+- Use the shared field borders and clear focus state for inputs, selects, and text areas.
+- Build every dropdown with the shared live-filtering dropdown control so users can either scroll through choices or type to narrow them immediately.
+- Always use the shared linked Make and Model live-filtering dropdowns anywhere a vehicle make or model is entered, searched, or filtered; selecting a make must narrow the available model choices while still allowing manual text entry.
+- Keep dropdown menus aligned directly beneath their field, styled with the shared dashboard theme, keyboard accessible, and scrollable when the option list is long.
+- Reuse the shared dropdown component for all future forms, pages, checklists, and widgets; do not create one-off or browser-default dropdowns unless the field has a documented accessibility or platform requirement that makes the shared control unsuitable.
+- Style every expandable navigation menu to match the A&A Holdings sidebar: the parent and visible child links must sit inside one clear outlined group with consistent spacing and active states. Use accordion behaviour so only one sibling dropdown group can remain open at a time.
+- Build every search and live-filter field with the same compact visual pattern used by the Garage calendar search: matching icon, input height, borders, focus state, spacing, and Clear button. Reuse that pattern for all future searches instead of creating one-off search styling.
+- Separate data-entry details from action/checklist controls with their own titled, outlined section.
+- Preserve these rules during redesigns and rebuilds, including newly created widgets.
+- Build every suitable dashboard section as a widget managed by the shared `UniversalCanvas` controls.
+- Every new widget must be movable and resizable while its page layout is unlocked.
+- Every widget page must offer Lock/Unlock Layout and Restore Widgets using the existing shared controls.
+- Every suitable widget must have the shared Pin to Sidebar control, saved per profile in protected persistence.
+- Pinned shortcuts must return to the correct widget with its heading fully visible.
+- Never build one-off move, lock, restore, or pin behavior when the shared controls can provide it.
+- Keep Task Board as a separate top-level workspace link directly below the A&A Holdings brand on every permitted profile; do not place it inside a business box.
+- Name dashboard links with `Dashboard` first, followed by the business or function, for example `Dashboard - AI Vending` and `Dashboard - Workshop`.
+- Keep shared workspace links visually separate from company-specific navigation groups.
+- Give every current and future profile a shared top-level `Problems, Solutions & Ideas` sidebar link that reports to A&A Holdings, automatically records the signed-in sender, and uses protected persistence.
+- Hide configuration and structural editing controls during normal use. The master account must always be able to grant or revoke each editing permission per profile; an employee may edit only when that explicit permission is active, and otherwise must receive a clear access notice.
+- Treat this file and `src/designSystem.css` as required acceptance criteria for every future dashboard change.
+- Keep the Garage customer-record navigation ordered as Profile, Contacts, Vehicles, Quotes, Job Cards, Invoices, Messages, and Notes; keep Payments inside the expandable Profile group rather than as a separate top-level customer category.
+- Use the same separate-job, labour, optional-parts, VAT, and totals structure for Quotes, Job Cards, and Invoices. Preserve the conversion chain so a Quote can create a Job Card and a Job Card can create an Invoice while retaining the customer, vehicle, jobs, labour, and parts links.
+- Model every garage job card as one or more separate named jobs. Each job must require allocated labour time that feeds the technician timer, may have optional parts assigned specifically to it, and the overall job card must include job-card-wide Consumables and Waste records.
+- Verify new or changed screens at desktop and mobile sizes before completion.
+- Exercise the actual changed interaction before calling it complete; a successful build alone is not sufficient. If the user flow cannot be exercised, state that limitation instead of claiming it was tested.
+- After testing through another page or section, always return the dashboard to the exact page and open form the user was viewing before the test began.
+- Mark every Garage price that excludes VAT with the shared small plus indicator beside the amount. Use the saved primary VAT rate by default, and offer the shared live-filtering VAT selector wherever a permitted user may choose another saved rate.
+- Require Part Name, Part Number, Supplier, Cost Price, and Selling Price on every Garage parts-entry form, whether opened from Settings, a Quote, a Job Card, or an Invoice. Show one red asterisk beside each required label and apply the same validation and duplicate-name/part-number rules everywhere.
+- Generate a unique editable Part Number from the entered Part Name on every new Garage part form, using short initials plus a three-digit sequence such as `RBP-001`; users may replace it before saving, but the final Part Number must remain unique. Do not show a separate SKU field.
+- Place an optional Markup % field between Cost Price and Selling Price on every Garage part form. Calculate Selling Price from Cost Price and the percentage, or work in reverse from an entered Selling Price to its matching Cost Price. Both price fields must remain manually editable.
+- When a manually entered part is added only to a Quote, Job Card, or Invoice, require only Part Name, Cost Price, and Selling Price. Require Part Number and Supplier as well only when saving that part into the shared Parts Database.
+- Use a shared live-filtering Supplier dropdown on every Garage part form. Manage its reusable supplier choices from Garage Settings and update all open part forms when the supplier list changes.
+- Avoid stacked or repeated outlines around nested panels. Where practical, consolidate them into one clean shared boundary so forms use space efficiently and remain visually consistent.

@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+.local-dashboard-data.json
+.local-dashboard-data.json.tmp
+.local-job-attachments/
+.pnpm-store/
+artifact_work/
+outputs/
+tmp_inventory/
+work/
+.backup-git/

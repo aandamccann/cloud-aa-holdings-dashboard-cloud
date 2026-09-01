@@ -1,0 +1,150 @@
+.rentalSafetyWidget{background:#fff;border:2px solid #b8c8db;border-radius:16px;overflow:hidden;box-shadow:0 7px 22px rgba(15,35,65,.07)}.rentalSafetyHeading{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:linear-gradient(105deg,#102b52,#194375);color:#fff}.rentalSafetyHeading>div{display:flex;align-items:center;gap:12px}.rentalSafetyHeading svg{color:#45dca8}.rentalSafetyHeading span em{display:block;font-size:9px;letter-spacing:1.2px;color:#61e3b5}.rentalSafetyHeading h3{margin:2px 0 0;font:800 20px Manrope}.rentalSafetyHeading>b{padding:7px 10px;border-radius:20px;background:rgba(255,255,255,.12);font-size:11px}.rentalSafetyWidget form{padding:20px}.rentalVehicleFields{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.rentalVehicleFields label,.rentalDamage>label{color:#526178;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.45px}.rentalVehicleFields input,.rentalDamage textarea{display:block;width:100%;box-sizing:border-box;margin-top:6px;border:1px solid #ccd6e2;border-radius:9px;padding:11px;background:#fbfcfe;color:#17233a}.rentalCheckGroups{display:grid;gap:13px;margin:18px 0}.rentalCheckGroups fieldset{margin:0;border:1px solid #d6e0eb;border-radius:12px;padding:14px 15px}.rentalCheckGroups legend{padding:0 8px;color:#e65a32;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.45px}.rentalCheckGroups fieldset>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.rentalCheckGroups label,.rentalMedia label{display:flex;align-items:center;gap:8px;padding:9px 10px;border:1px solid #e1e7ee;border-radius:8px;background:#f8fafc;color:#344258;font-size:11px;cursor:pointer}.rentalCheckGroups label.checked{border-color:#39bd8b;background:#eaf8f2;color:#087451}.rentalCheckGroups input,.rentalMedia input,.rentalDecision input{accent-color:#15966c;width:17px;height:17px}.rentalEvidence{display:grid;grid-template-columns:2fr 1fr;gap:14px;padding:16px;border:1px solid #d5e0eb;border-radius:12px;background:#f4f7fa}.rentalEvidence h4,.rentalSafetyHistory h4{margin:0 0 11px;color:#173865;font-size:12px;text-transform:uppercase}.rentalDamage textarea{min-height:96px;resize:vertical}.rentalDamage p{display:flex;align-items:center;gap:7px;margin:9px 0 0;color:#748197;font-size:10px}.rentalMedia{display:grid;align-content:start;gap:9px}.rentalMedia h4{margin-bottom:2px}.rentalMedia label svg{width:17px;color:#245a92}.rentalDecision{display:flex;align-items:center;gap:10px;margin-top:16px;padding:14px;border-radius:11px;background:#102b52;color:#fff}.rentalDecision strong{display:flex;align-items:center;gap:8px;margin-right:auto}.rentalDecision label{display:flex;align-items:center;gap:6px;border:1px solid #526c8e;border-radius:8px;padding:8px 11px}.rentalDecision label.selected.safe{background:#168a66;border-color:#43d5a5}.rentalDecision label.selected.unsafe{background:#b84438;border-color:#ef7b6d}.rentalDecision button{display:flex;align-items:center;gap:7px;border:0;border-radius:8px;background:#f2c94c;color:#102342;padding:10px 13px;font-weight:900}.rentalSafetyHistory{border-top:1px solid #dbe3ec;padding:17px 20px}.rentalSafetyHistory>div{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid #edf1f5}.rentalSafetyHistory svg{width:19px}.rentalSafetyHistory span{display:flex;flex:1;flex-direction:column}.rentalSafetyHistory small{color:#738096}.rentalSafetyHistory em{font-size:10px;font-weight:900;font-style:normal}.pass{color:#0d956b}.fail{color:#c1463b}@media(max-width:850px){.rentalVehicleFields{grid-template-columns:1fr 1fr}.rentalCheckGroups fieldset>div{grid-template-columns:1fr 1fr}.rentalEvidence{grid-template-columns:1fr}.rentalDecision{align-items:stretch;flex-wrap:wrap}.rentalDecision strong{width:100%}.rentalDecision button{margin-left:auto}}@media(max-width:520px){.rentalSafetyHeading{align-items:flex-start;flex-direction:column}.rentalVehicleFields,.rentalCheckGroups fieldset>div{grid-template-columns:1fr}.rentalSafetyWidget form{padding:13px}.rentalDecision label{flex:1;justify-content:center}.rentalDecision button{width:100%;justify-content:center}}
+.rentalHistoryTitle{display:flex;align-items:center;justify-content:space-between}.rentalHistoryTitle h4{margin:0}.rentalHistoryTitle button,.rentalSafetyHistory>div>button{border:1px solid #cbd6e2;border-radius:7px;background:#fff;color:#174f80;padding:6px 9px;font-size:9px;font-weight:800}.rentalSafetyHistory>div>button{margin-left:5px}.rentalInspectionOverlay{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:18px;background:rgba(4,14,30,.78)}.rentalInspectionOverlay>div{position:relative;width:min(720px,100%);max-height:88vh;overflow:auto;border-radius:16px;background:#fff;padding:26px}.inspectionClose{position:absolute;right:14px;top:14px;width:34px;height:34px;border:0;border-radius:50%;background:#e8eef5;color:#17365e;font-size:22px}.rentalInspectionOverlay>div>em{color:#15966c;font-size:9px;font-weight:900;letter-spacing:1.2px}.rentalInspectionOverlay h3{margin:5px 0 18px;font:800 24px Manrope;color:#102b52}.inspectionMeta{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:16px}.inspectionMeta span{display:flex;flex-direction:column;border-radius:9px;background:#f1f5f9;padding:10px;color:#263750}.inspectionMeta b{color:#718096;font-size:8px;text-transform:uppercase}.inspectionMeta i{font-style:normal;font-weight:800}.rentalInspectionOverlay section{margin:10px 0;border:1px solid #dce4ed;border-radius:10px;padding:12px}.rentalInspectionOverlay section h4{margin:0 0 9px;color:#173865;font-size:11px;text-transform:uppercase}.rentalInspectionOverlay section>div{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.rentalInspectionOverlay section span{border-radius:7px;padding:7px 9px;font-size:10px}.rentalInspectionOverlay .done{background:#e8f7f1;color:#087451}.rentalInspectionOverlay .notDone{background:#fff0ee;color:#ad3d34}.rentalInspectionOverlay section p{margin:0;color:#4f5f74}@media(max-width:650px){.inspectionMeta,.rentalInspectionOverlay section>div{grid-template-columns:1fr 1fr}.rentalSafetyHistory>div{flex-wrap:wrap}.rentalSafetyHistory>div>button{width:100%;margin-left:29px}}
+.rentalDirection{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding:11px 13px;border-radius:10px;background:#eef3f8}.rentalDirection>b{margin-right:auto;color:#173865}.rentalDirection label{display:flex;align-items:center;gap:7px;border:1px solid #cbd7e4;border-radius:8px;background:#fff;padding:8px 11px;font-size:11px}.rentalDirection label.active{border-color:#2fbe8c;background:#e9f8f2;color:#087451;font-weight:800}.rentalFleetSelect{display:flex;align-items:end;gap:13px;margin-bottom:12px}.rentalFleetSelect label{flex:1;color:#526178;font-size:10px;font-weight:800;text-transform:uppercase}.rentalFleetSelect select{display:block;width:100%;margin-top:6px;border:1px solid #ccd6e2;border-radius:9px;background:#fff;padding:11px}.rentalFleetSelect small{max-width:290px;color:#718096}.rentalWorkflowWarning{display:flex;flex-direction:column;gap:3px;margin:14px 0;border:1px solid #f0ad45;border-left:5px solid #e78316;border-radius:9px;background:#fff7e8;padding:12px 14px;color:#8a4d08}.rentalPairList{display:grid;gap:12px}.rentalPair{display:grid!important;grid-template-columns:1fr 1fr;gap:12px!important;border:0!important}.rentalPair article{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:4px 9px;border:1px solid #d8e1eb;border-radius:10px;padding:13px;background:#f8fafc}.rentalPair article>em{grid-column:1/-1;color:#315b87;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}.rentalPair article>svg{grid-row:2/5;width:19px}.rentalPair article>b,.rentalPair article>small{grid-column:2}.rentalPair article>strong{grid-column:3;grid-row:2;color:#173865}.rentalPair article>span{grid-column:2;font-size:9px;font-weight:900}.rentalPair article>button{grid-column:3;grid-row:3/5;border:1px solid #b9cadb;border-radius:7px;background:#fff;color:#174f80;padding:7px 9px;font-size:9px;font-weight:800}.rentalPair article.missing{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;border-style:dashed;background:#fff7ee;color:#985513}.rentalPair article.missing small{color:#a06b38}@media(max-width:650px){.rentalDirection,.rentalFleetSelect{align-items:stretch;flex-direction:column}.rentalDirection>b{margin-right:0}.rentalDirection label{justify-content:center}.rentalFleetSelect small{max-width:none}.rentalPair{grid-template-columns:1fr!important}}
+.rentalSafetyHistory>.rentalPairList{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important}.rentalSafetyHistory>.rentalPairList>.rentalPair{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important;width:100%;box-sizing:border-box;padding:0 0 16px!important;border:0!important;border-bottom:2px solid #e3e9f0!important}.rentalPair>header{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;border-radius:9px;background:#173b68;color:#fff;padding:10px 13px}.rentalPair>header span{display:flex;align-items:baseline;gap:8px}.rentalPair>header small{color:#b9c9dd}.rentalPair>header em{color:#55dda5;font-size:8px;font-style:normal;font-weight:900;letter-spacing:1px;text-transform:uppercase}@media(max-width:650px){.rentalSafetyHistory>.rentalPairList>.rentalPair{grid-template-columns:1fr!important}.rentalPair>header{align-items:flex-start;flex-direction:column;gap:4px}.rentalPair>header span{align-items:flex-start;flex-direction:column;gap:1px}}
+.rentalDirection label.disabled{opacity:.48;cursor:not-allowed}.rentalDirection>small{color:#9a5a10;font-size:9px;font-weight:800}
+.rentalPair article.missing>button{width:100%;margin-top:7px;border:0;border-radius:7px;background:#e78418;color:#fff;padding:9px 10px;font-size:9px;font-weight:900;cursor:pointer}.rentalSafetyWidget form{scroll-margin-top:92px}
+.rentalFleetManager{margin:0 0 14px;border:1px solid #9fc8b9;border-radius:11px;background:#effaf6;padding:12px}.rentalFleetManager>button{width:100%;border:0;border-radius:8px;background:#137c5e;color:#fff;padding:11px 13px;font-weight:900;cursor:pointer}.rentalFleetManager>div{display:grid;grid-template-columns:1fr 1fr auto;align-items:end;gap:10px;margin-top:11px}.rentalFleetManager label{color:#526178;font-size:10px;font-weight:800;text-transform:uppercase}.rentalFleetManager input{display:block;width:100%;box-sizing:border-box;margin-top:6px;border:1px solid #bdd3ca;border-radius:8px;background:#fff;padding:10px}.rentalFleetManager>div>button{border:0;border-radius:8px;background:#f2c94c;color:#102342;padding:11px 13px;font-weight:900}.rentalFleetSelect>span{display:flex;gap:7px}.rentalFleetSelect>span button{border:1px solid #bccbda;border-radius:7px;background:#fff;color:#174f80;padding:8px;font-size:9px;font-weight:800}.rentalNewVehicleConfirm{display:flex;align-items:center;gap:8px;margin:10px 0;border:1px solid #e6ba5a;border-radius:9px;background:#fff8e7;padding:10px 12px;color:#704a08}.rentalNewVehicleConfirm input{width:18px;height:18px;accent-color:#15966c}@media(max-width:650px){.rentalFleetManager>div{grid-template-columns:1fr}.rentalFleetSelect>span{width:100%}.rentalFleetSelect>span button{flex:1}}
+.rentalFleetSelect>span button.confirmRemove{border-color:#c4473d;background:#c4473d;color:#fff}
+.rentalVehicleSection{margin:16px 0 22px;border:3px solid #245f9f;border-radius:14px;background:#eef6ff;padding:16px;box-shadow:inset 6px 0 #245f9f}.rentalVehicleSection>h4{margin:0;color:#173865;font-size:14px;text-transform:uppercase;letter-spacing:.7px}.rentalVehicleSection>p{margin:4px 0 14px;color:#526b87;font-size:11px}.rentalVehicleSection .rentalFleetSelect{margin-bottom:14px}.rentalVehicleSection .rentalVehicleFields{padding-top:14px;border-top:2px solid #b8cee5}.rentalFleetManager>div{grid-template-columns:1fr 1fr 1fr auto}.requiredMark{color:#d92d20;font-size:15px;font-style:normal;font-weight:1000;line-height:0}.rentalDecision .requiredMark{color:#ff776d}
+
+/* Stronger visual boundaries for the rental inspection workflow. */
+.rentalSafetyWidget{border:3px solid #315b87;box-shadow:0 8px 24px rgba(15,35,65,.12)}
+.rentalCheckGroups fieldset{border:2px solid #7898bb;background:#fbfdff}
+.rentalCheckGroups fieldset>div{display:grid;grid-template-columns:1fr;gap:9px}.trafficCheckRow{display:grid;grid-template-columns:minmax(150px,1fr) minmax(360px,1.4fr);align-items:center;gap:14px;border:2px solid #7898bb;border-radius:10px;padding:10px 12px;background:#fff}.trafficCheckRow>strong{color:#243b58;font-size:12px}.trafficCheckRow>div{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.trafficCheckRow button{border:2px solid #c6d0dc;border-radius:8px;background:#f6f8fb;color:#33465e;padding:9px 7px;font-size:11px;font-weight:850;cursor:pointer}.trafficCheckRow button:nth-child(1).selected{border-color:#11835f;background:#dff5eb;color:#075d42}.trafficCheckRow button:nth-child(2).selected{border-color:#d8840b;background:#fff0ce;color:#8c5100}.trafficCheckRow button:nth-child(3).selected{border-color:#c44238;background:#fde5e2;color:#8f2821}.trafficCheckRow.good{border-left:7px solid #11835f}.trafficCheckRow.attention{border-left:7px solid #e18b0c}.trafficCheckRow.bad{border-left:7px solid #c44238}.rentalInspectionOverlay .good{background:#e8f7f1;color:#087451}.rentalInspectionOverlay .attention{background:#fff2d8;color:#8c5100}.rentalInspectionOverlay .bad{background:#fff0ee;color:#ad3d34}@media(max-width:700px){.trafficCheckRow{grid-template-columns:1fr}.trafficCheckRow>div{grid-template-columns:1fr}.trafficCheckRow button{min-height:43px}}
+.trafficCheckRow{grid-template-columns:minmax(130px,.8fr) auto minmax(220px,1.4fr)}.trafficStatusButtons{display:flex!important;grid-template-columns:none!important;gap:9px!important}.trafficStatusButtons button{width:42px;height:42px;padding:0!important;border-radius:50%!important;color:#fff!important;font-size:23px!important;line-height:1;font-weight:950!important;opacity:.48;box-shadow:none}.trafficStatusButtons button:nth-child(1){border-color:#087451;background:#14966c}.trafficStatusButtons button:nth-child(2){border-color:#a75e00;background:#e58a0b}.trafficStatusButtons button:nth-child(3){border-color:#8f2821;background:#ce453a}.trafficStatusButtons button.selected{opacity:1;box-shadow:0 0 0 4px rgba(16,43,82,.18),0 3px 8px rgba(15,35,65,.2);transform:scale(1.06)}.trafficCheckNote{display:block;color:#526178;font-size:9px;font-weight:850;text-transform:uppercase}.trafficCheckNote span{display:block;margin-bottom:4px}.trafficCheckNote input{width:100%;min-height:42px;border:2px solid #7898bb;border-radius:8px;background:#fbfdff;padding:9px 10px;color:#17233a;text-transform:none}@media(max-width:700px){.trafficCheckRow{grid-template-columns:1fr}.trafficStatusButtons{justify-content:flex-start}.trafficStatusButtons button{min-height:42px}.trafficCheckNote input{font-size:16px}}
+.checkNoteDropdown{position:relative}.checkNoteDropdown>input{padding-right:42px}.checkNoteDropdown>button{position:absolute;right:3px;top:3px;width:36px;height:36px;border:0;border-left:1px solid #c5d1df;border-radius:0 6px 6px 0;background:#eaf1f8;color:#173f69;font-size:20px;font-weight:900;cursor:pointer}.checkNoteMenu{position:absolute;z-index:20;top:calc(100% + 4px);left:0;right:0;max-height:210px;overflow-y:auto;border:2px solid #52779e;border-radius:9px;background:#fff;box-shadow:0 10px 25px rgba(15,35,65,.2);padding:5px}.checkNoteMenu button{display:block;width:100%;height:auto;border:0;border-radius:6px;background:#fff;color:#243b58;padding:9px 10px;text-align:left;font-size:11px;font-weight:750;opacity:1}.checkNoteMenu button:hover,.checkNoteMenu button:focus{background:#e8f1fb;color:#0e477d}.checkNoteMenu small{display:block;padding:10px;color:#697990;font-size:10px;text-transform:none}@media(max-width:700px){.checkNoteMenu{position:relative;top:4px;max-height:185px}}
+.checkNoteChoice{display:grid;grid-template-columns:1fr 34px;align-items:center;gap:3px}.checkNoteChoice>button:last-child{display:grid;place-items:center;width:32px;height:32px;padding:0;background:#fff0ee;color:#a6332b;font-size:17px}.checkNoteChoice>button:last-child:hover{background:#fbd9d5;color:#81231d}.addCheckNoteButton{margin-top:5px!important;border-top:1px solid #d7e1eb!important;border-radius:5px!important;background:#eaf5ff!important;color:#0d568d!important;font-weight:900!important}.addCheckNoteChoice{display:grid;grid-template-columns:1fr auto;gap:6px;margin-top:6px;padding:6px;border-top:1px solid #d7e1eb}.addCheckNoteChoice input{min-width:0;border:2px solid #7898bb;border-radius:7px;padding:8px;font-size:11px;text-transform:none}.addCheckNoteChoice button{width:auto!important;background:#174f80!important;color:#fff!important;font-weight:900!important}
+.rentalCheckGroups legend{display:flex;align-items:center;gap:10px;width:auto}.rentalCheckGroups legend>button{border:1px solid #d58a6e;border-radius:6px;background:#fff4ef;color:#a94425;padding:5px 8px;font-size:9px;font-weight:900;cursor:pointer;text-transform:none;letter-spacing:0}.checkGroupEditor{margin:4px 0 14px;border:2px solid #52779e;border-radius:11px;background:#eef5fc;padding:14px}.checkGroupEditor>label,.checkGroupEditor>div>label{display:block;color:#36516e;font-size:9px;font-weight:900;text-transform:uppercase}.checkGroupEditor input{width:100%;border:2px solid #7898bb;border-radius:8px;background:#fff;padding:9px;color:#17233a;font-size:12px;text-transform:none}.checkGroupEditor>div{display:grid;gap:8px;margin:10px 0}.checkGroupEditor>div label>span{display:grid;grid-template-columns:1fr 38px;gap:5px;margin-top:4px}.checkGroupEditor>div label button{border:0;border-radius:7px;background:#fde2df;color:#9d3028;font-size:20px;font-weight:900}.checkGroupEditor .addCheckItem{border:1px dashed #52779e;border-radius:7px;background:#fff;color:#174f80;padding:8px 10px;font-weight:900}.checkGroupEditor footer{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}.checkGroupEditor footer button{border:1px solid #7898bb;border-radius:7px;background:#fff;color:#244663;padding:8px 11px;font-weight:850}.checkGroupEditor footer button:last-child{border-color:#12815f;background:#12815f;color:#fff}@media(max-width:700px){.rentalCheckGroups legend{align-items:flex-start;flex-direction:column}.checkGroupEditor{padding:10px}.checkGroupEditor footer{flex-direction:column}.checkGroupEditor footer button{width:100%}}
+.checklistTemplateControls{display:flex;align-items:center;justify-content:space-between;gap:12px;border:2px solid #52779e;border-radius:10px;background:#edf5fc;padding:11px 13px}.checklistTemplateControls strong{color:#173f69;font-size:12px;text-transform:uppercase}.checklistTemplateControls button{border:0;border-radius:8px;background:#174f80;color:#fff;padding:9px 12px;font-size:10px;font-weight:900;cursor:pointer}@media(max-width:700px){.checklistTemplateControls{align-items:stretch;flex-direction:column}.checklistTemplateControls button{width:100%}}
+.checklistPermissionNotice,.checklistEditModeNotice{margin:14px 20px 0;border:2px solid;border-radius:10px;padding:11px 13px;font-size:11px;font-weight:850}.checklistPermissionNotice{border-color:#c44238;background:#fff0ee;color:#952f27}.checklistEditModeNotice{border-color:#d8840b;background:#fff3d9;color:#815000}@media(max-width:700px){.checklistPermissionNotice,.checklistEditModeNotice{margin:10px 13px 0}}
+.rentalCheckGroups fieldset{padding:0 15px 15px;overflow:visible}.rentalCheckGroups legend{width:calc(100% + 30px);margin:0 -15px 14px;padding:12px 15px;border-radius:9px 9px 0 0;background:linear-gradient(100deg,#173f69,#245d91);color:#fff!important;font-size:14px!important;font-weight:950!important;letter-spacing:.35px!important;box-shadow:0 3px 8px rgba(15,35,65,.16)}.rentalCheckGroups legend>span{flex:1}.rentalCheckGroups legend>button{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.14);color:#fff}.trafficCheckNote>span{font-size:11px;letter-spacing:.4px;color:#36516e}.trafficCheckNote input{min-height:58px!important;padding:12px 48px 12px 12px!important;font-size:14px!important;line-height:1.35}.checkNoteDropdown>button{top:6px;height:45px;width:40px;font-size:23px}@media(max-width:700px){.rentalCheckGroups fieldset{padding:0 10px 12px}.rentalCheckGroups legend{width:calc(100% + 20px);margin:0 -10px 12px;padding:12px 11px;font-size:13px!important}.trafficCheckNote input{min-height:64px!important;font-size:16px!important}.checkNoteDropdown>button{height:51px}}
+.trafficCheckRow{grid-template-columns:minmax(120px,.55fr) 144px minmax(0,2.6fr);width:100%}.trafficCheckNote,.checkNoteDropdown{width:100%;min-width:0}.trafficCheckNote input{display:block;width:100%!important}.checkNoteMenu{width:100%;min-width:280px;max-height:260px}.checkNoteChoice{grid-template-columns:minmax(0,1fr) 36px;min-height:42px}.checkNoteMenu .checkNoteChoice>button:first-child{display:flex;align-items:center;min-width:0;min-height:40px;width:100%;padding:10px 12px;white-space:normal;overflow-wrap:anywhere;line-height:1.35}.checkNoteMenu .checkNoteChoice>button:last-child{align-self:center}.checkNoteMenu>.addCheckNoteButton{min-height:42px;white-space:normal;line-height:1.3}@media(max-width:900px){.trafficCheckRow{grid-template-columns:minmax(115px,.65fr) 135px minmax(0,2fr)}}@media(max-width:700px){.trafficCheckRow{grid-template-columns:1fr}.checkNoteMenu{min-width:0;width:100%}}
+.rentalSafetyWidget{container-type:inline-size}.rentalCheckGroups fieldset,.trafficCheckRow,.trafficCheckNote,.checkNoteDropdown,.checkNoteDropdown>input{min-width:0;max-width:100%}.trafficCheckRow{overflow:visible}.checkNoteDropdown>input{box-sizing:border-box}@container(max-width:720px){.trafficCheckRow{grid-template-columns:minmax(0,1fr);gap:10px}.trafficStatusButtons{justify-content:flex-start}.trafficCheckNote,.checkNoteDropdown,.checkNoteDropdown>input{width:100%}.checkNoteMenu{position:relative;top:4px;min-width:0;width:100%;max-height:220px}.rentalCheckGroups fieldset{overflow:hidden}.rentalCheckGroups legend{max-width:none}.trafficCheckNote input{padding-right:50px!important}}@container(max-width:430px){.trafficStatusButtons{justify-content:space-between;width:100%}.trafficStatusButtons button{width:48px;height:48px}.rentalCheckGroups fieldset{padding-left:8px;padding-right:8px}.rentalCheckGroups legend{width:calc(100% + 16px);margin-left:-8px;margin-right:-8px}}
+.rentalCheckGroups label,.rentalMedia label{border:2px solid #5f82a8;background:#f5f9fd;color:#243b58;font-weight:700}
+.rentalCheckGroups label:hover,.rentalMedia label:hover{border-color:#245f9f;background:#eef6ff}
+.rentalCheckGroups label.checked{border-color:#12815f;background:#e5f7ef;color:#075b40;box-shadow:inset 4px 0 #12815f}
+.rentalCheckGroups input,.rentalMedia input,.rentalDecision input{outline:2px solid #234e7a;outline-offset:1px;border-radius:3px}
+.rentalCheckGroups label.checked input,.rentalMedia label:has(input:checked) input,.rentalDecision label:has(input:checked) input{outline-color:#12815f}
+.rentalEvidence,.rentalDirection,.rentalFleetManager,.rentalNewVehicleConfirm{border:2px solid #7898bb}
+.rentalVehicleFields input,.rentalDamage textarea,.rentalFleetSelect select,.rentalFleetManager input{border:2px solid #7898bb}
+
+/* Keep inspection checks visually simple: one separator between rows. */
+.rentalCheckGroups fieldset>div{gap:0}
+.trafficCheckRow{
+  border:0;
+  border-bottom:1px solid #a9b9ca;
+  border-radius:0;
+  padding:14px 4px;
+  background:transparent;
+}
+.trafficCheckRow:last-child{border-bottom:0}
+.trafficCheckRow.good,.trafficCheckRow.attention,.trafficCheckRow.bad{border-left:0}
+.rentalCheckGroups .trafficCheckNote{
+  border:0;
+  border-radius:0;
+  padding:0;
+  background:transparent;
+  box-shadow:none;
+}
+.rentalCheckGroups .trafficCheckNote:hover{border:0;background:transparent}
+.addCheckNoteChoice{align-items:stretch;background:#f5f9fd;border-radius:8px}
+.addCheckNoteChoice input{min-height:44px;background:#fbfdff;color:#17233a;font-size:14px;line-height:1.35}
+.addCheckNoteChoice button{min-height:44px;border-radius:7px!important;padding:0 16px!important}
+.trafficCheckNote>span{display:none}
+.trafficCheckRow{grid-template-columns:minmax(140px,.7fr) 200px minmax(0,2.6fr);align-items:center}
+.trafficStatusButtons{
+  flex-direction:row;
+  align-items:center;
+  justify-content:center!important;
+  gap:9px!important;
+  width:200px;
+}
+.trafficStatusButtons button{
+  width:58px;
+  height:82px;
+  min-height:82px;
+  border-radius:14px!important;
+  font-size:30px!important;
+}
+@container(max-width:720px){
+  .trafficCheckRow{grid-template-columns:200px minmax(0,1fr)}
+  .trafficCheckRow>strong{grid-column:1/-1}
+  .trafficStatusButtons{grid-column:1;grid-row:2}
+  .trafficCheckNote{grid-column:2;grid-row:2}
+}
+@container(max-width:430px){
+  .trafficCheckRow{grid-template-columns:minmax(0,1fr)}
+  .trafficCheckRow>strong{grid-column:1/-1}
+  .trafficStatusButtons{grid-column:1;grid-row:2;width:100%}
+  .trafficCheckNote{grid-column:1;grid-row:3}
+  .trafficStatusButtons button{width:31%;max-width:82px;height:74px}
+}
+.rentalChecklistEvidence{margin:16px 0;border:2px solid #7898bb;border-radius:12px;background:#f4f8fc;padding:15px}
+.rentalChecklistEvidence h4{margin:0;color:#173865;font-size:14px;text-transform:uppercase}.rentalChecklistEvidence p{margin:5px 0 12px;color:#60738a;font-size:12px}
+.rentalAttachmentPicker{display:inline-flex;align-items:center;border:0!important;border-radius:8px!important;background:#173865!important;color:#fff!important;padding:11px 14px!important;font-weight:900!important;cursor:pointer}.rentalAttachmentPicker input{display:none}
+.rentalChecklistEvidence>small{display:block;margin-top:9px;color:#315b87;font-weight:800}
+.rentalAttachmentPreview,.savedRentalEvidence>div{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;margin-top:12px}
+.rentalAttachmentPreview article,.savedRentalEvidence a,.savedRentalEvidence figure{display:grid;gap:6px;margin:0;border:1px solid #b6c7d8;border-radius:9px;background:#fff;padding:7px;overflow:hidden;color:#173865;text-decoration:none}
+.rentalAttachmentPreview img,.rentalAttachmentPreview video,.savedRentalEvidence img,.savedRentalEvidence video{width:100%;height:115px;object-fit:cover;border-radius:6px;background:#0b172a}
+.rentalAttachmentPreview span,.savedRentalEvidence span,.savedRentalEvidence figcaption{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:750}
+.rentalAttachmentPreview button{border:0;border-radius:6px;background:#fbe6e6;color:#9d2424;padding:7px;font-weight:850}
+@container(max-width:430px){.rentalAttachmentPicker{display:flex;width:100%;justify-content:center;min-height:48px}.rentalAttachmentPreview,.savedRentalEvidence>div{grid-template-columns:1fr 1fr}}
+.rentalChecklistEvidence>.rentalAttachmentPicker{display:none!important}
+.rentalChecklistEvidence.attachedFilesOnly{padding:10px;background:transparent}.attachedFilesOnly .rentalAttachmentPreview{margin-top:6px}
+.rentalFloatingAttachmentPicker{
+  position:fixed;
+  z-index:70;
+  right:26px;
+  bottom:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:210px;
+  min-height:52px;
+  border:2px solid #fff!important;
+  border-radius:13px!important;
+  background:#173865!important;
+  color:#fff!important;
+  box-shadow:0 8px 24px rgba(15,35,65,.32);
+  padding:10px 16px!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  cursor:pointer;
+  text-transform:none!important;
+}
+.rentalFloatingAttachmentPicker input{display:none}
+@media(max-width:600px){.rentalFloatingAttachmentPicker{left:12px;right:12px;bottom:12px;min-height:56px;font-size:15px!important}.rentalSafetyWidget form{padding-bottom:82px}}
+.rentalEvidence{grid-template-columns:minmax(0,1fr)}
+.rentalDamage{width:100%;min-width:0}
+.rentalDamage textarea{width:100%;min-height:190px;padding:14px;font-size:15px;line-height:1.5;resize:vertical}
+@media(max-width:600px){.rentalDamage textarea{min-height:220px;font-size:16px}}
+.rentalSafetyHistory{margin-top:26px;border-top:6px solid #102b52;background:#eef3f8;padding:12px 20px 22px}
+.completedChecksHeading{margin:0 0 18px;padding:22px 32px;border-radius:10px;background:linear-gradient(105deg,#173f69,#245d91);color:#fff}
+.completedChecksHeading em{display:block;color:#72e0bc;font-size:9px;font-weight:950;font-style:normal;letter-spacing:1.2px}
+.completedChecksHeading h4{margin:4px 0!important;color:#fff!important;font-size:20px!important;letter-spacing:0;text-transform:none!important}
+.completedChecksHeading p{margin:0;color:#dce9f5;font-size:12px}
+.rentalPairList{border:2px solid #7898bb;border-radius:12px;background:#fff;padding:12px}
+@media(max-width:600px){.rentalSafetyHistory{margin-top:20px;padding:10px 12px 16px}.completedChecksHeading{margin:0 0 14px;padding:20px 24px}.completedChecksHeading h4{font-size:19px!important}.rentalPairList{padding:8px}}
+.trafficCheckRow>strong{
+  display:block;
+  min-width:0;
+  max-width:100%;
+  color:#102f52;
+  font-size:15px;
+  font-weight:950;
+  line-height:1.25;
+  letter-spacing:.15px;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+@container(max-width:720px){
+  .trafficCheckRow>strong{
+    border-left:5px solid #245d91;
+    border-radius:4px;
+    background:#eaf2fa;
+    padding:9px 11px;
+    font-size:16px;
+  }
+}

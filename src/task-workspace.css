@@ -1,0 +1,9 @@
+.movableWorkPanel{cursor:grab}
+.workWidgetHandle{display:flex;align-items:center;gap:8px;background:#071a36;color:#fff;margin:-16px -16px 16px;padding:10px 14px}
+.workWidgetHandle>b{font:700 13px Manrope}
+.workWidgetHandle>span{flex:1;color:#8fa2bf;font-size:9px}
+.workWidgetHandle button{border:1px solid #3c5273;background:#122b50;color:#fff;border-radius:6px;width:29px;height:27px}
+.workWidgetHandle button:disabled{opacity:.35}
+.movableWorkPanel.reminderPanel .card>h3{margin:0 0 18px;border-radius:9px}
+.movableWorkPanel.boardPanel .taskIntro{margin:0 0 18px;border-radius:9px}
+@media(max-width:650px){.movableWorkPanel{cursor:default}.workWidgetHandle>span{display:none}}
