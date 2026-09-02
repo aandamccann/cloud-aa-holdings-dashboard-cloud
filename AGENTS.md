@@ -43,3 +43,4 @@ Apply these rules automatically to every new page, form, checklist, panel, and w
 - When a manually entered part is added only to a Quote, Job Card, or Invoice, require only Part Name, Cost Price, and Selling Price. Require Part Number and Supplier as well only when saving that part into the shared Parts Database.
 - Use a shared live-filtering Supplier dropdown on every Garage part form. Manage its reusable supplier choices from Garage Settings and update all open part forms when the supplier list changes.
 - Avoid stacked or repeated outlines around nested panels. Where practical, consolidate them into one clean shared boundary so forms use space efficiently and remain visually consistent.
+- Use email inputs with shared validation on every form. Blank optional email fields are allowed, but any entered address must contain one `@`, a valid domain, and a domain suffix (for example `name@gmail.com`) before the form can save.
