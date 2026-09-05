@@ -1,0 +1,6 @@
+export type GarageBonusRules={minimumEfficiency:number;minimumAttendance:number;baseBonus:number;extraStartsAt:number;extraPerPercent:number;maximumExtra:number};
+export const garageBonusRulesKey='aa-garage-bonus-rules-v1';
+export const defaultGarageBonusRules:GarageBonusRules={minimumEfficiency:100,minimumAttendance:50,baseBonus:100,extraStartsAt:105,extraPerPercent:5,maximumExtra:250};
+export const readGarageBonusRules=():GarageBonusRules=>{try{return{...defaultGarageBonusRules,...JSON.parse(localStorage.getItem(garageBonusRulesKey)||'{}')}}catch{return defaultGarageBonusRules}};
+export const saveGarageBonusRules=(rules:GarageBonusRules)=>{localStorage.setItem(garageBonusRulesKey,JSON.stringify(rules));window.dispatchEvent(new CustomEvent('aa-garage-bonus-rules-updated'))};
+export const calculateGarageBonus=(efficiency:number,attendance:number,rules=readGarageBonusRules())=>{const qualifies=efficiency>=rules.minimumEfficiency&&attendance>=rules.minimumAttendance,attendanceFactor=Math.min(1,Math.max(0,attendance)/100),eligibility=Math.min(100,Math.max(0,efficiency))*attendanceFactor,extraEfficiency=Math.max(0,efficiency-rules.extraStartsAt),extra=qualifies?Math.min(rules.maximumExtra,extraEfficiency*rules.extraPerPercent)*attendanceFactor:0,amount=qualifies?rules.baseBonus*attendanceFactor+extra:0;return{qualifies,eligibility,extra,amount}};

@@ -1,9 +1,10 @@
 import {useState,type FormEvent} from 'react';
 import {readEmployeePermissions,type EmployeePermission} from './employeePermissions';
+import {employeeDetail,readGarageEmployees} from './garageEmployees';
 
 type AccessRole='owner'|'keith'|'gary'|'sandra'|'ilona'|'driver'|'picker'|'gavin'|'auris'|'mohammad'|'jack';
 type Profile={id:string,name:string,detail:string,access:AccessRole};
-const profiles:Profile[]=[
+const baseProfiles:Profile[]=[
  {id:'aaron',name:'Aaron',detail:'Owner / Master access',access:'owner'},
  {id:'adam',name:'Adam',detail:'Owner / Master access',access:'owner'},
  {id:'keith',name:'Keith',detail:'Garage · Workshop',access:'keith'},
@@ -29,7 +30,10 @@ const companies:{id:keyof EmployeePermission,name:string,detail:string,initial:s
 export function Login({go}:{go:(role:any)=>void}){
  const[pending,setPending]=useState<Profile|null>(null),[code,setCode]=useState(''),[error,setError]=useState(''),[view,setView]=useState<'people'|'companies'>('people'),[openCompany,setOpenCompany]=useState<string|null>(null);
  const permissions=readEmployeePermissions();
- const companyPeople=(company:keyof EmployeePermission)=>profiles.filter(profile=>profile.access==='owner'||!!permissions[profile.id]?.[company]);
+ const garageProfileIds=new Set(['keith','sandra','gavin','auris','mohammad','jack']);
+ const employeeProfiles:Profile[]=readGarageEmployees().filter(employee=>employee.active).map(employee=>({id:employee.id,name:employee.name,detail:employeeDetail(employee),access:employee.loginRole}));
+ const profiles=[...baseProfiles.filter(profile=>!garageProfileIds.has(profile.id)),...employeeProfiles];
+ const companyPeople=(company:keyof EmployeePermission)=>profiles.filter(profile=>profile.access==='owner'||!!(permissions[profile.id]||permissions[profile.access])?.[company]);
  const finish=(profile:Profile)=>{sessionStorage.setItem('aa-role',profile.access);sessionStorage.setItem('aa-actor',profile.name);sessionStorage.setItem('aa-actor-id',profile.id);go(profile.access)};
  const enter=(profile:Profile)=>{const security=JSON.parse(localStorage.getItem('aa-login-security')||'{}'),rule=security[profile.id]||security[profile.access];if(rule?.enabled&&rule?.passcode){setPending(profile);setCode('');setError('')}else finish(profile)};
  const unlock=(e:FormEvent)=>{e.preventDefault();if(!pending)return;const security=JSON.parse(localStorage.getItem('aa-login-security')||'{}'),rule=security[pending.id]||security[pending.access];if(code===rule?.passcode)finish(pending);else setError('Incorrect passcode. Please try again.')};

@@ -1,0 +1,19 @@
+.garageReportsLayout{
+  grid-template-columns:230px minmax(0,1fr);
+  gap:12px;
+}
+
+.garageReportsLayout>main{
+  margin:0!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0;
+  padding:0!important;
+}
+
+@media(max-width:850px){
+  .garageReportsLayout{grid-template-columns:1fr}
+}
+
+.technicianFilters{display:flex;align-items:end;gap:12px;padding:14px 14px 0;flex-wrap:wrap}.technicianFilters>.vehicleDropdown{min-width:260px;flex:1;margin:0}.technicianPeriodControls{display:flex;gap:7px;flex-wrap:wrap}.technicianPeriodControls button{border:1px solid #8daecc;border-radius:8px;background:#fff;color:#173f6d;font-weight:800;padding:8px 18px}.technicianPeriodControls button.active{background:#173f6d;border-color:#173f6d;color:#fff}.technicianReportExplanation{margin:12px 14px 0;border:1px solid #8db3da;border-left:4px solid #0d9368;border-radius:9px;background:#f1f8f5;padding:10px 12px;color:#173f6d}.technicianReportExplanation p{margin:4px 0 0;color:#586f84;font-size:12px;line-height:1.4}
+.technicianDateControl{display:grid;gap:4px;color:#173f6d;font-size:12px;font-weight:800}.technicianDateControl input{height:36px;min-width:150px;border:1px solid #8daecc;border-radius:8px;background:#fff;padding:0 10px;color:#173f6d;font:inherit}.technicianDateControl input:focus{outline:3px solid rgba(13,147,104,.18);border-color:#0d9368}.technicianPresentButton{height:36px;border:1px solid #0d9368;border-radius:8px;background:#0d9368;color:#fff;font-weight:900;padding:0 18px}.technicianPresentButton:hover{background:#087653}

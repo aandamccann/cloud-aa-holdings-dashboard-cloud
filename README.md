@@ -1,10 +1,22 @@
 # A and A Holdings Business Dashboard
 
-Responsive local management dashboard consolidating McCann Motors and AI Vending, with role views, prior-week reporting, editable targets, alerts, trends, vending operations, inventory, refills and faults.
+Responsive management dashboard consolidating McCann Motors and AI Vending, with protected Supabase sign-in, multi-organisation data, role views, garage workflows, reporting, rental checks, private attachments, vending operations, inventory, refills and faults.
 
 ## Run
 
-Install Node.js 20+, then run `npm install` and `npm run dev`. Build with `npm run build`.
+Install Node.js 20+, copy `.env.local.example` to `.env.local`, add the Supabase project URL and publishable key, then run `npm install` and `npm run dev`. Build with `npm run build`.
+
+## Supabase setup
+
+Create a Supabase project in an EU region and run every SQL file in `supabase/migrations` in filename order. Put only the project URL and browser-safe publishable key in `.env.local`. Never put a secret key or service-role key in this frontend project.
+
+The migrations create protected organisation memberships, customers, vehicles, documents, parts, payments, timers, checklists, completed jobs, rental safety checks, organisation settings, private job-attachment storage, and per-user dashboard preferences. Row Level Security is enabled so signed-in users can access only permitted organisation records; user layout preferences are private to their own account.
+
+After creating the first Supabase Auth user, follow the bootstrap migration instructions to connect that user to the initial organisation. Test sign-in and the Quote → Job Card → Invoice → Payment workflow before deployment.
+
+## GitHub safety
+
+The real `.env.local`, local dashboard records, attachment files, build output and backup folders are excluded by `.gitignore`. Before each push, run `git status` and confirm that no credentials, downloaded backups or customer exports are included. Publishable Supabase keys are designed for browser use, but database protection still depends on keeping Row Level Security policies enabled.
 
 ## Secure Routal connection
 
@@ -12,7 +24,7 @@ Enter `ROUTAL_API_KEY` and `ROUTAL_PROJECT_ID` in `.env.local` directly on the c
 
 Select a profile on the demo sign-in screen. Owner sees the group; Keith, Gary and Sandra see McCann Motors responsibilities; AI Vending Ops sees vending operations.
 
-Seeded records persist in browser local storage on the same device. The model separates businesses, machines, stock, reports and alerts so MAM, vending telemetry, payment and inventory APIs can replace the local repository later.
+Garage records and shared operational settings synchronise to Supabase after cloud sign-in. Some demonstration-only modules still use browser storage until their production integrations are added.
 
 ## Product principles carried forward from the original Cursor build
 

@@ -1,0 +1,8 @@
+.cloudLoginForm{display:grid;gap:18px;width:min(420px,100%)}
+.cloudLoginForm label{display:grid;gap:7px;color:var(--aa-navy,#123b68);font-weight:800}
+.cloudLoginForm label span b{color:#c62828}
+.cloudLoginForm input{width:100%;min-height:44px;border:1px solid var(--aa-field-border,#87a8c7);border-radius:8px;background:#fff;padding:0 12px;color:var(--aa-navy,#123b68);font:inherit}
+.cloudLoginForm input:focus{outline:3px solid rgba(13,147,104,.18);border-color:var(--aa-green,#0d9368)}
+.cloudLoginForm .primary{min-height:44px;border:0;border-radius:8px;background:var(--aa-green,#0d9368);color:#fff;font-weight:900;cursor:pointer}
+.cloudLoginForm .primary:disabled{cursor:wait;opacity:.65}
+.cloudLoginError{margin:0;border:1px solid #e3a4a4;border-radius:7px;background:#fff1f1;padding:9px 11px;color:#a31919;font-weight:750}
