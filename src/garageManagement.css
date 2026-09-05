@@ -118,3 +118,5 @@ main:has(.gms)>header{display:none!important}main:has(.gms)>.gmsDrawerBackdrop,.
 @media(max-width:560px){.technicianChecklistEvidence video{height:95px}}
 .technicianChecklistActions .checklistEditButton{border-color:#2563eb;background:#2563eb;color:#fff}
 .technicianChecklistActions .checklistEditButton:hover,.technicianChecklistActions .checklistEditButton:focus{background:#1d4ed8;outline:2px solid #93c5fd}
+.technicianChecklistMediaActions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px}.technicianChecklistMediaActions .secondaryMediaButton{border-color:#315b87;background:#fff;color:#173865}
+@media(max-width:560px){.technicianChecklistMediaActions{grid-template-columns:1fr!important}.technicianChecklistMediaActions .technicianChecklistPhotoButton{min-height:42px}}
