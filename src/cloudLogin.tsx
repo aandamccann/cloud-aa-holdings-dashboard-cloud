@@ -30,6 +30,26 @@ const applicationRole = (role: MembershipRow['role']) => {
   return role === 'technician' ? 'gavin' : 'owner'
 }
 
+const reportBackgroundSyncError=(reason:unknown)=>window.dispatchEvent(new CustomEvent('aa-cloud-sync-error',{detail:reason instanceof Error?reason.message:'Some dashboard data could not be refreshed.'}))
+
+async function syncDashboardInBackground(){
+  const tasks=[
+    (async()=>{await hydrateGarageCloudRecords();await syncLocalGarageCustomersToCloud();startGarageCloudSync()})(),
+    (async()=>{await hydrateGaragePartsFromCloud();await syncLocalGaragePartsToCloud();startGaragePartsCloudSync()})(),
+    (async()=>{await hydrateGarageEstimatesFromCloud();await syncLocalGarageEstimatesToCloud();startGarageEstimatesCloudSync()})(),
+    (async()=>{await hydrateGarageJobCardsFromCloud();await syncLocalGarageJobCardsToCloud();startGarageJobCardsCloudSync()})(),
+    (async()=>{await syncGarageTimersToCloud();startGarageTimersCloudSync()})(),
+    (async()=>{await hydrateGarageChecklistsFromCloud();await queueGarageChecklistSync();startGarageChecklistsCloudSync()})(),
+    (async()=>{await hydrateGarageInvoicesFromCloud();await syncGarageInvoicesToCloud();startGarageInvoicesCloudSync()})(),
+    (async()=>{await hydrateGarageSettingsFromCloud();await syncGarageSettingsToCloud();startGarageSettingsCloudSync()})(),
+    (async()=>{await hydrateCompletedJobsFromCloud();await syncCompletedJobsToCloud();startCompletedJobsCloudSync()})(),
+    (async()=>{await hydrateRentalSafetyChecksFromCloud();await syncRentalSafetyChecksToCloud();startRentalSafetyChecksCloudSync()})(),
+    (async()=>{await hydrateUserPreferencesFromCloud();await syncUserPreferencesToCloud();startUserPreferencesCloudSync()})(),
+  ]
+  const results=await Promise.allSettled(tasks),failed=results.find(result=>result.status==='rejected')
+  if(failed?.status==='rejected')reportBackgroundSyncError(failed.reason)
+}
+
 export function CloudLogin({go}:{go:(role:any)=>void}) {
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
@@ -66,39 +86,8 @@ export function CloudLogin({go}:{go:(role:any)=>void}) {
       sessionStorage.setItem('aa-role',role)
       sessionStorage.setItem('aa-actor',profile?.full_name||auth.user.email||'A&A user')
       sessionStorage.setItem('aa-actor-id',auth.user.id)
-      await hydrateGarageCloudRecords()
-      await syncLocalGarageCustomersToCloud()
-      startGarageCloudSync()
-      await hydrateGaragePartsFromCloud()
-      await syncLocalGaragePartsToCloud()
-      startGaragePartsCloudSync()
-      await hydrateGarageEstimatesFromCloud()
-      await syncLocalGarageEstimatesToCloud()
-      startGarageEstimatesCloudSync()
-      await hydrateGarageJobCardsFromCloud()
-      await syncLocalGarageJobCardsToCloud()
-      startGarageJobCardsCloudSync()
-      await syncGarageTimersToCloud()
-      startGarageTimersCloudSync()
-      await hydrateGarageChecklistsFromCloud()
-      await queueGarageChecklistSync()
-      startGarageChecklistsCloudSync()
-      await hydrateGarageInvoicesFromCloud()
-      await syncGarageInvoicesToCloud()
-      startGarageInvoicesCloudSync()
-      await hydrateGarageSettingsFromCloud()
-      await syncGarageSettingsToCloud()
-      startGarageSettingsCloudSync()
-      await hydrateCompletedJobsFromCloud()
-      await syncCompletedJobsToCloud()
-      startCompletedJobsCloudSync()
-      await hydrateRentalSafetyChecksFromCloud()
-      await syncRentalSafetyChecksToCloud()
-      startRentalSafetyChecksCloudSync()
-      await hydrateUserPreferencesFromCloud()
-      await syncUserPreferencesToCloud()
-      startUserPreferencesCloudSync()
       go(role)
+      void syncDashboardInBackground()
     }catch(reason){
       setError(reason instanceof Error?reason.message:'The dashboard could not sign you in.')
     }finally{
@@ -108,3 +97,4 @@ export function CloudLogin({go}:{go:(role:any)=>void}) {
 
   return <div className="login cloudLogin"><div className="hero"><div className="brand"><i>A<span>&</span>A</i><div><b>A and A Holdings</b><small>Business intelligence</small></div></div><div><em>SECURE CLOUD ACCESS</em><h1>One clear view.<br/>Three strong businesses.</h1><p>Sign in with your individual A&A Holdings account.</p></div><small>Private management dashboard</small></div><div className="loginbox"><form className="cloudLoginForm" onSubmit={signIn}><div><h2>Welcome back</h2><p>Use your A&A dashboard email and password.</p></div><label><span>Email address <b>*</b></span><input required type="email" autoComplete="username" value={email} onChange={event=>setEmail(event.target.value)} placeholder="name@company.ie"/></label><label><span>Password <b>*</b></span><input required type="password" autoComplete="current-password" value={password} onChange={event=>setPassword(event.target.value)} placeholder="Password"/></label>{error&&<p className="cloudLoginError" role="alert">{error}</p>}<button className="primary" type="submit" disabled={submitting||!isSupabaseConfigured}>{submitting?'Signing in…':'Sign in to dashboard'}</button>{!isSupabaseConfigured&&<p className="cloudLoginError">The cloud connection has not been configured.</p>}</form></div></div>
 }
+
