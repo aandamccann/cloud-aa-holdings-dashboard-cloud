@@ -53,7 +53,8 @@ export async function syncLocalGarageCustomersToCloud(){
 let cloudSyncStarted=false
 export function startGarageCloudSync(){
  if(cloudSyncStarted)return;cloudSyncStarted=true
- let timer:number|undefined
- const sync=()=>{window.clearTimeout(timer);timer=window.setTimeout(()=>{void syncLocalGarageCustomersToCloud().catch(error=>window.dispatchEvent(new CustomEvent('aa-cloud-sync-error',{detail:error instanceof Error?error.message:'Cloud sync failed.'})))},150)}
+ let timer:number|undefined,pulling=false
+ const report=(error:unknown)=>window.dispatchEvent(new CustomEvent('aa-cloud-sync-error',{detail:error instanceof Error?error.message:'Cloud sync failed.'})),sync=()=>{window.clearTimeout(timer);timer=window.setTimeout(()=>{void syncLocalGarageCustomersToCloud().catch(report)},150)},refresh=async()=>{if(pulling||document.visibilityState==='hidden')return;pulling=true;try{await hydrateGarageCloudRecords()}catch(error){report(error)}finally{pulling=false}}
  window.addEventListener('aa-garage-customers-updated',sync);window.addEventListener('aa-garage-vehicles-updated',sync);window.addEventListener('aa-garage-jobs-updated',sync)
+ window.setInterval(()=>void refresh(),15000);window.addEventListener('focus',()=>void refresh());document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')void refresh()})
 }
