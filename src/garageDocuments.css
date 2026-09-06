@@ -103,3 +103,4 @@ body:has(.garagePaymentDialog){overflow:hidden}.garagePaymentDialog{position:fix
  .garageDocumentPreview section p{grid-template-columns:1fr;gap:4px;min-width:0;padding:6px;overflow-wrap:anywhere}
  .garageDocumentPreviewJob{min-width:0}
 }
+.garageDocumentFormNotice{position:sticky;top:0;z-index:45;margin:0 0 12px;border:3px solid #c73535;border-radius:9px;background:#fff0f0;color:#9f1f1f;padding:12px 14px;font-weight:900;line-height:1.35;box-shadow:0 4px 14px #5b10102b}
